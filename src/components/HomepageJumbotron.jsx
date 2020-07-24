@@ -5,14 +5,13 @@ const HomepageJumbotron = () => {
   return (
     <div class="jumbotron jumbotron-fluid bgimage-home">
       <div class="container">
-        <h1 class="fontstyle-title text-light">
-          Welcome to Lizzie Adela Studio
-        </h1>
-        <p class="lead fontstyle-title text-light">
-          Creating lovely little pieces of jewellery.
+        <h1 class="fontstyle-title text-light">Welcome.</h1>
+        <p class="lead fontstyle-content text-light">
+          Donec vitae vehicula nibh. Nulla varius vitae libero in posuere.
+          Mauris sollicitudin turpis in est commodo euismod sit amet a nunc.
         </p>
         <p>
-          <Link to="shop" class="btn btn-outline-light btn-lg">
+          <Link to="shop" class="btn btn-light btn-md fontstyle-title">
             Shop the collection
           </Link>
         </p>
