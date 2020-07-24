@@ -1,11 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
+
+:root {
+  --color--lightblue: #9ecdf9;
+  --color--darkgreygreen: #2e3e24;
+  --color--lilac: #c7bdc9;
+}
 
 .bgcolor-main {
-  background-color: teal;
+  background-color: var(--color--lilac) !important;
+}
+
+.bgcolor-next {
+  background-color: var(--color--darkgreygreen) !important;
+}
+
+.bgcolor-blue {
+  background-color: var(--color--lightblue) !important;
 }
 
 .fontstyle-title {
   font-family: "Poiret One", cursive;
+}
+
+.fontstyle-content {
+  font-family: "Cormorant Garamond", serif;
 }
 
 .fontsize-lg {
@@ -13,7 +32,15 @@
 }
 
 .fontcolor-main {
-  color: teal;
+  color: var(--color--lilac) !important;
+}
+
+.fontcolor-next {
+  color: var(--color--darkgreygreen) !important;
+}
+
+.fontcolor-blue {
+  color: var(--color--lightblue) !important;
 }
 
 .bgimage-home {

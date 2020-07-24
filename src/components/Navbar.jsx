@@ -3,8 +3,8 @@ import { Link } from "@reach/router";
 
 const Nav = () => {
   return (
-    <nav class="navbar navbar-expand-md navbar-light">
-      <Link to="/" class="navbar-brand fontstyle-title fontcolor-main">
+    <nav class="navbar navbar-expand-md navbar-light bgcolor-main">
+      <Link to="/" class="navbar-brand fontstyle-title">
         LIZZIE ADELA STUDIO
       </Link>
       <button
