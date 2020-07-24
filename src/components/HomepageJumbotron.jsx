@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 const HomepageJumbotron = () => {
   return (
-    <div class="jumbotron jumbotron-fluid bgimage-home">
+    <div class="jumbotron jumbotron-fluid bgimage-home fade-in">
       <div class="container">
         <h1 class="fontstyle-title text-light">Welcome.</h1>
         <p class="lead fontstyle-content text-light">

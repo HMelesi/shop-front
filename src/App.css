@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
 
 :root {
   --color--lightblue: #9ecdf9;
@@ -19,16 +20,8 @@
   background-color: var(--color--lightblue) !important;
 }
 
-.fontstyle-title {
-  font-family: "Poiret One", cursive;
-}
-
-.fontstyle-content {
-  font-family: "Cormorant Garamond", serif;
-}
-
-.fontsize-lg {
-  font-size: x-large;
+.bordercolor-main {
+  border-color: var(--color--lilac) !important;
 }
 
 .fontcolor-main {
@@ -43,10 +36,79 @@
   color: var(--color--lightblue) !important;
 }
 
+.fontstyle-title {
+  font-family: "Poiret One", cursive;
+}
+
+.fontstyle-content {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.fontstyle-other {
+  font-family: "Prata", serif;
+}
+
+.fontsize-lg {
+  font-size: x-large;
+}
+
 .bgimage-home {
   background: url("./assets/images/shona-emerald.jpg") no-repeat center center;
   -webkit-background-size: auto auto;
   -moz-background-size: auto auto;
   -o-background-size: auto auto;
   background-size: auto auto;
+}
+
+.fade-in {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
