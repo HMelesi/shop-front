@@ -8,7 +8,7 @@ const Aboutpage = () => {
       <h2 class="mx-3 my-3 fontstyle-title lead text-left fontcolor-next">
         Hi, I'm Lizzie.
       </h2>
-      <img src={lizzbeach} class="img-fluid" alt="Lizzie on a beach" />
+      <img src={lizzbeach} class="img-fluid fade-in" alt="Lizzie on a beach" />
       <div class="container-fluid my-5 px-5">
         <div class="row">
           <div class="col-md-8 d-flex align-items-center pb-5">
@@ -30,7 +30,7 @@ const Aboutpage = () => {
           <div class="col-md-4">
             <img
               src={lizzwork}
-              class="img-fluid rounded"
+              class="img-fluid rounded fade-in"
               alt="Lizzie in the studio"
             />
           </div>
