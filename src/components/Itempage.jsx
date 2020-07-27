@@ -3,6 +3,8 @@ import React from "react";
 // import * as api from "../utils/api.js";
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
+import Loading from "./Loading";
+import Error from "./Error";
 
 const GET_ITEM_DETAIL = gql`
   query itemById($ID: ID!) {
@@ -30,8 +32,8 @@ const Itempage = ({ item_id }) => (
   // };
   <Query query={GET_ITEM_DETAIL} variables={{ ID: item_id }}>
     {({ loading, error, data }) => {
-      if (loading) return <div>Loading...</div>;
-      if (error) return <div>Error :(</div>;
+      if (loading) return <Loading />;
+      if (error || data.item === null) return <Error />;
 
       return (
         <div class="container justify-content-center text-right py-5 px-3">
