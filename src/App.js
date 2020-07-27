@@ -17,6 +17,7 @@ function App() {
         <Shoppage path="/shop" />
         <Itempage path="/shop/:item_id" />
         <Aboutpage path="/about" />
+        <Homepage path="*" />
       </Router>
       <Footer />
     </div>

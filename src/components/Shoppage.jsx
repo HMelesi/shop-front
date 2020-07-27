@@ -4,6 +4,8 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import { Link } from "@reach/router";
+import Loading from "./Loading";
+import Error from "./Error";
 
 const GET_ITEMS = gql`
   query items {
@@ -29,8 +31,8 @@ const Shoppage = () => (
   // };
   <Query query={GET_ITEMS}>
     {({ loading, error, data }) => {
-      if (loading) return <div>Loading...</div>;
-      if (error) return <div>Error :(</div>;
+      if (loading) return <Loading />;
+      if (error) return <Error />;
       return (
         <div class="container justify-content-center text-center py-5 px-3">
           {/* <h2 class="fontstyle-title text-dark fontsize-lg text-center">
