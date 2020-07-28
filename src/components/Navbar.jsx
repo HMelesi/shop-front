@@ -7,13 +7,16 @@ const Nav = () => {
       <Link to="/" class="navbar-brand fontstyle-title">
         LIZZIE ADELA STUDIO
       </Link>
+
       <button
         type="button"
         class="navbar-toggler navbar-toggler-sm"
         data-toggle="collapse"
         data-target="#navbarCollapse"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span>
+          <i class="fa fa-bars"></i>
+        </span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarCollapse">

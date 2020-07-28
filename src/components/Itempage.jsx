@@ -24,22 +24,26 @@ const GET_ITEM_DETAIL = gql`
   }
 `;
 
-const Itempage = ({ item_id }) => (
+const Itempage = ({ item_id, itemNumber, setItemNumber }) => (
   // const paymentHandler = (details, data) => {
   //   /** Here you can call your backend API
   //     endpoint and update the database */
   //   console.log(details, data);
   // };
+
   <Query query={GET_ITEM_DETAIL} variables={{ ID: item_id }}>
     {({ loading, error, data }) => {
       if (loading) return <Loading />;
       if (error || data.item === null) return <Error />;
 
+      const addItemToCart = () => {
+        const items = parseInt(localStorage.getItem("items"));
+        const newItems = items + 1;
+        localStorage.setItem("items", newItems);
+      };
+
       return (
         <div class="container justify-content-center text-right py-5 px-3">
-          {/* <h2 class="fontstyle-title text-dark fontsize-lg text-center">
-            This is the shop page!
-          </h2> */}
           <div class="row">
             <div class="col-12 col-md-6">
               <img
@@ -58,6 +62,12 @@ const Itempage = ({ item_id }) => (
                 <p class="fontstyle-content text-dark">
                   Metal: {data.item.metal}
                 </p>
+                <button
+                  onClick={() => addItemToCart()}
+                  class="btn btn-dark btn-md align-middle fontstyle-title my-2"
+                >
+                  add to cart
+                </button>
               </div>
             </div>
             <div class="col-12 col-md-6">
