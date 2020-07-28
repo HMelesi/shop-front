@@ -3,6 +3,9 @@ import React from "react";
 // import * as api from "../utils/api.js";
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
+import { connect } from "react-redux";
+import { addToCart } from "./actions/cartActions.js";
+
 import Loading from "./Loading";
 import Error from "./Error";
 
@@ -12,6 +15,7 @@ const GET_ITEM_DETAIL = gql`
       name
       description
       price
+      id
       category
       metal
       hero {
@@ -24,7 +28,7 @@ const GET_ITEM_DETAIL = gql`
   }
 `;
 
-const Itempage = ({ item_id, itemNumber, setItemNumber }) => (
+const Itempage = ({ item_id, addToCart }) => (
   // const paymentHandler = (details, data) => {
   //   /** Here you can call your backend API
   //     endpoint and update the database */
@@ -36,10 +40,11 @@ const Itempage = ({ item_id, itemNumber, setItemNumber }) => (
       if (loading) return <Loading />;
       if (error || data.item === null) return <Error />;
 
-      const addItemToCart = () => {
-        const items = parseInt(localStorage.getItem("items"));
-        const newItems = items + 1;
-        localStorage.setItem("items", newItems);
+      const addItemToCart = (id) => {
+        addToCart(id);
+        // const items = parseInt(localStorage.getItem("items"));
+        // const newItems = items + 1;
+        // localStorage.setItem("items", newItems);
       };
 
       return (
@@ -63,7 +68,7 @@ const Itempage = ({ item_id, itemNumber, setItemNumber }) => (
                   Metal: {data.item.metal}
                 </p>
                 <button
-                  onClick={() => addItemToCart()}
+                  onClick={() => addItemToCart(data.item.id)}
                   class="btn btn-dark btn-md align-middle fontstyle-title my-2"
                 >
                   add to cart
@@ -131,4 +136,18 @@ const Itempage = ({ item_id, itemNumber, setItemNumber }) => (
   </Query>
 );
 
-export default Itempage;
+const mapStateToProps = (state) => {
+  return {
+    items: state.items,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => {
+      dispatch(addToCart(id));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Itempage);
