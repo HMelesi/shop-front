@@ -6,6 +6,11 @@ import * as serviceWorker from "./serviceWorker";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import "bootstrap/dist/css/bootstrap.min.css";
+import cartReducer from "./components/reducers/cartReducer";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
+const store = createStore(cartReducer);
 
 const client = new ApolloClient({
   uri:
@@ -18,7 +23,10 @@ const ApolloApp = (AppComponent) => (
   </ApolloProvider>
 );
 
-ReactDOM.render(ApolloApp(App), document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>{ApolloApp(App)}</Provider>,
+  document.getElementById("root")
+);
 
 // ReactDOM.render(
 //   <React.StrictMode>

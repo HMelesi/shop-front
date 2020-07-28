@@ -4,6 +4,7 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import { Link } from "@reach/router";
+
 import Loading from "./Loading";
 import Error from "./Error";
 

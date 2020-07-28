@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "@reach/router";
 // import { Link } from "@reach/router";
 
 const SubNav = ({ itemNumber, setItemNumber }) => {
-  //   useEffect(() => {
-  //     const items =
-  //     setItemNumber(items);
-  //   });
-
   return (
     <div class="bg-dark container-fluid d-flex flex-direction-row justify-content-end align-items-center py-1">
       <Link to="/cart">
