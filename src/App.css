@@ -52,6 +52,10 @@
   font-size: x-large;
 }
 
+.fontsize-sm {
+  font-size: small;
+}
+
 .bgimage-home {
   background: url("./assets/images/shona-emerald.jpg") no-repeat center center;
   -webkit-background-size: auto auto;

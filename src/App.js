@@ -9,6 +9,7 @@ import Itempage from "./components/Itempage";
 import Footer from "./components/Footer";
 import SubNav from "./components/SubNav";
 import ShoppingCart from "./components/ShoppingCart";
+import CategoryPage from "./components/CategoryPage";
 
 const App = () => {
   const [itemNumber, setItemNumber] = useState(0);
@@ -20,7 +21,8 @@ const App = () => {
       <Router>
         <Homepage path="/" />
         <Shoppage path="/shop" />
-        <Itempage path="/shop/:item_id" />
+        <CategoryPage path="/shop/:category" />
+        <Itempage path="/shop/:category/:item_id" />
         <Aboutpage path="/about" />
         <ShoppingCart path="/cart" />
         <Homepage path="*" />

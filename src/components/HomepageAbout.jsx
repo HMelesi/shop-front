@@ -17,7 +17,7 @@ const HomepageAbout = () => {
         to="about"
         class="btn btn-dark btn-md align-middle fontstyle-title my-2"
       >
-        Meet the maker
+        meet the maker
       </Link>
     </div>
   );
