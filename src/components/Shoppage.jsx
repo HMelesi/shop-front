@@ -1,6 +1,4 @@
 import React from "react";
-// import PayPalBtn from "./PayPalBtn.jsx";
-// import * as api from "../utils/api.js";
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import { Link } from "@reach/router";
@@ -31,16 +29,10 @@ const GET_ITEMS = gql`
 `;
 
 const Shoppage = () => (
-  // const paymentHandler = (details, data) => {
-  //   /** Here you can call your backend API
-  //     endpoint and update the database */
-  //   console.log(details, data);
-  // };
   <Query query={GET_ITEMS}>
     {({ loading, error, data }) => {
       if (loading) return <Loading />;
       if (error) return <Error />;
-      console.log(data);
       return (
         <div class="container justify-content-center text-center px-3">
           <nav aria-label="breadcrumb">

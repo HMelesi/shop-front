@@ -31,8 +31,8 @@ A user can currently:
 - Add the item to cart and see this change reflected in the cart icon
 - Remove an item from the cart and see this change reflected in the cart icon and cart page
 - View their shopping cart with item totals and a total cost
+- Filter products by item type
 
 Soon a user will be able to:
 
 - Checkout from the cart page using PayPal (sandbox)
-- Filter products by item type or metal

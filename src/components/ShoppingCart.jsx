@@ -1,4 +1,6 @@
 import React from "react";
+// import PayPalBtn from "./PayPalBtn.jsx";
+// import * as api from "../utils/api.js";
 import { connect } from "react-redux";
 import { Link } from "@reach/router";
 import { removeFromCart } from "./actions/cartActions.js";
@@ -29,7 +31,7 @@ const ShoppingCart = ({ addedItems, total, removeFromCart, itemsTotal }) => {
               return (
                 <li class="row border-top py-3" key={item.id}>
                   <div class="col-4">
-                    <Link to={`/shop/${item.id}`}>
+                    <Link to={`/shop/${item.category}/${item.id}`}>
                       <img
                         src={item.hero.url}
                         class="img-fluid fade-in"
