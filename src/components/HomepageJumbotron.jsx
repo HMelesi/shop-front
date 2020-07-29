@@ -12,7 +12,7 @@ const HomepageJumbotron = () => {
         </p>
         <p>
           <Link to="shop" class="btn btn-light btn-md fontstyle-title">
-            Shop the collection
+            shop the collection
           </Link>
         </p>
       </div>

@@ -50,16 +50,25 @@ const Itempage = ({ item_id, addToCart }) => (
 
       return (
         <div class="container justify-content-center text-right px-3">
-          <nav aria-label="breadcrumb">
-            <ol class="bg-transparent breadcrumb px-0 mx-0">
+          <nav aria-label="breadcrumb  ">
+            <ol class="bg-transparent breadcrumb px-0 mx-0 fontsize-sm">
               <li class="breadcrumb-item">
                 <Link to="/shop">
-                  <p class="fontcolor-main fontstyle-content">shop</p>
+                  <p class="fontcolor-main fontstyle-content fontsize-sm">
+                    shop
+                  </p>
                 </Link>
               </li>
               <li class="breadcrumb-item">
-                <p class="fontcolor-main fontstyle-content">
-                  {data.item.category}
+                <Link to={`/shop/${data.item.category}`}>
+                  <p class="fontcolor-main fontstyle-content fontsize-sm">
+                    {data.item.category}
+                  </p>
+                </Link>
+              </li>
+              <li class="breadcrumb-item">
+                <p class="text-dark fontstyle-content fontsize-sm">
+                  {data.item.name.toLowerCase()}
                 </p>
               </li>
             </ol>
