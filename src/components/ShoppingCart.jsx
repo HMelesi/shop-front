@@ -2,50 +2,50 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "@reach/router";
 
-const ShoppingCart = ({ items }) => {
+const ShoppingCart = ({ addedItems, total }) => {
   return (
     <div class="container text-center py-5 px-5">
-      <h2 class="fontstyle-title text-dark lead text-center py-5">
-        Shopping cart page!
-      </h2>
-      {items.map((item) => {
-        return (
-          <li className="collection-item avatar" key={item.id}>
-            <div className="item-img">
-              <img src={item.img} alt={item.img} className="" />
-            </div>
-
-            <div className="item-desc">
-              <span className="title">{item.title}</span>
-              <p>{item.desc}</p>
-              <p>
-                <b>Price: {item.price}$</b>
-              </p>
-              <p>
-                <b>Quantity: {item.quantity}</b>
-              </p>
-              <div className="add-remove">
-                <Link to="/cart">
-                  <i className="material-icons">arrow_drop_up</i>
-                </Link>
-                <Link to="/cart">
-                  <i className="material-icons">arrow_drop_down</i>
+      {/* <h3 class="fontstyle-content text-dark lead text-left">Your cart:</h3> */}
+      <ul class="container">
+        {addedItems.map((item) => {
+          return (
+            <li class="row border-top py-3" key={item.id}>
+              <div class=" col-4">
+                <Link to={`/shop/${item.id}`}>
+                  <img
+                    src={item.hero.url}
+                    class="img-fluid fade-in"
+                    alt={item.name}
+                  ></img>
                 </Link>
               </div>
-              <button className="waves-effect waves-light btn pink remove">
-                Remove
-              </button>
-            </div>
-          </li>
-        );
-      })}
+              <div class="container-fluid col-8">
+                <p class="fontstyle-title text-left">{item.name}</p>
+                <p class="fontstyle-content text-left">
+                  £{item.price.toFixed(2)}
+                </p>
+                <p class="fontstyle-content text-left">
+                  Quantity: {item.quantity}
+                </p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      <div class="container border-top py-3">
+        <h3 class="fontstyle-title text-dark lead text-left">
+          Total: £{total.toFixed(2)}
+        </h3>
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    items: state.addedItems,
+    addedItems: state.addedItems,
+    total: state.total,
   };
 };
 
