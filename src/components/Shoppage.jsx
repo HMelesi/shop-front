@@ -35,10 +35,16 @@ const Shoppage = () => (
       if (loading) return <Loading />;
       if (error) return <Error />;
       return (
-        <div class="container justify-content-center text-center py-5 px-3">
-          {/* <h2 class="fontstyle-title text-dark fontsize-lg text-center">
-            This is the shop page!
-          </h2> */}
+        <div class="container justify-content-center text-center px-3">
+          <nav aria-label="breadcrumb">
+            <ol class="bg-transparent breadcrumb px-0 mx-0">
+              <li class="breadcrumb-item">
+                <Link to="/shop">
+                  <p class="fontcolor-main fontstyle-content">shop</p>
+                </Link>
+              </li>
+            </ol>
+          </nav>
           <div class="row">
             {data.items.map((item) => {
               return (

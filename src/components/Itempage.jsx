@@ -5,6 +5,7 @@ import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions.js";
+import { Link } from "@reach/router";
 
 import Loading from "./Loading";
 import Error from "./Error";
@@ -48,7 +49,21 @@ const Itempage = ({ item_id, addToCart }) => (
       };
 
       return (
-        <div class="container justify-content-center text-right py-5 px-3">
+        <div class="container justify-content-center text-right px-3">
+          <nav aria-label="breadcrumb">
+            <ol class="bg-transparent breadcrumb px-0 mx-0">
+              <li class="breadcrumb-item">
+                <Link to="/shop">
+                  <p class="fontcolor-main fontstyle-content">shop</p>
+                </Link>
+              </li>
+              <li class="breadcrumb-item">
+                <p class="fontcolor-main fontstyle-content">
+                  {data.item.category}
+                </p>
+              </li>
+            </ol>
+          </nav>
           <div class="row">
             <div class="col-12 col-md-6">
               <img
