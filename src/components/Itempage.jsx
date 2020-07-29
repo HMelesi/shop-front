@@ -40,8 +40,8 @@ const Itempage = ({ item_id, addToCart }) => (
       if (loading) return <Loading />;
       if (error || data.item === null) return <Error />;
 
-      const addItemToCart = (id) => {
-        addToCart(id);
+      const addItemToCart = (item) => {
+        addToCart(item);
         // const items = parseInt(localStorage.getItem("items"));
         // const newItems = items + 1;
         // localStorage.setItem("items", newItems);
@@ -68,7 +68,7 @@ const Itempage = ({ item_id, addToCart }) => (
                   Metal: {data.item.metal}
                 </p>
                 <button
-                  onClick={() => addItemToCart(data.item.id)}
+                  onClick={() => addItemToCart(data.item)}
                   class="btn btn-dark btn-md align-middle fontstyle-title my-2"
                 >
                   add to cart
@@ -137,15 +137,13 @@ const Itempage = ({ item_id, addToCart }) => (
 );
 
 const mapStateToProps = (state) => {
-  return {
-    items: state.items,
-  };
+  return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => {
-      dispatch(addToCart(id));
+    addToCart: (item) => {
+      dispatch(addToCart(item));
     },
   };
 };

@@ -10,21 +10,27 @@ import cartReducer from "./components/reducers/cartReducer";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-const store = createStore(cartReducer);
+const initState = {
+  itemsTotal: 0,
+  addedItems: [],
+  total: 0,
+};
+
+const store = createStore(cartReducer, initState);
 
 const client = new ApolloClient({
   uri:
     "https://api-eu-central-1.graphcms.com/v2/ckd4fe3ka0si801xmeaucehnf/master",
 });
 
-const ApolloApp = (AppComponent) => (
-  <ApolloProvider client={client}>
-    <AppComponent />
-  </ApolloProvider>
-);
+const AppComponent = () => <App />;
 
 ReactDOM.render(
-  <Provider store={store}>{ApolloApp(App)}</Provider>,
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <AppComponent />
+    </Provider>
+  </ApolloProvider>,
   document.getElementById("root")
 );
 
