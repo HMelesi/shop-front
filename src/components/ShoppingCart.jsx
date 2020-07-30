@@ -13,9 +13,9 @@ const ShoppingCart = ({ addedItems, total, removeFromCart, itemsTotal }) => {
   return (
     <div class="container text-center py-5 px-5">
       {itemsTotal === 0 ? (
-        <div class=" fade-in">
+        <div class="fade-in">
           <h3 class="fontstyle-content text-dark lead py-3">
-            Your cart is empty.
+            your cart is empty
           </h3>
           <Link
             to="/shop"
